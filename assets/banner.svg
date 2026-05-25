@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="medai-ddi-lite banner">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="320" fill="url(#bg)"/>
+  <rect x="0" y="0" width="6" height="320" fill="url(#accent)"/>
+
+  <g font-family="ui-sans-serif, system-ui, sans-serif">
+    <text x="60" y="74" fill="#94a3b8" font-size="14" letter-spacing="3">05 · MEDAI · PHARMACOLOGY</text>
+    <text x="60" y="148" fill="#f8fafc" font-size="56" font-weight="700">medai-ddi-lite</text>
+    <text x="60" y="196" fill="#cbd5e1" font-size="22">Drug-pair interaction baseline — Morgan fingerprints + XGBoost.</text>
+    <text x="60" y="226" fill="#94a3b8" font-size="18">companion to ddi-risk-explorer (IEEE flagship) · laptop-runnable</text>
+
+    <g transform="translate(60,258)">
+      <g><rect rx="14" ry="14" width="110" height="32" fill="#ef4444" opacity="0.18" stroke="#ef4444"/>
+         <text x="55" y="21" fill="#ef4444" font-size="14" text-anchor="middle">RDKit</text></g>
+      <g transform="translate(122,0)"><rect rx="14" ry="14" width="110" height="32" fill="#8b5cf6" opacity="0.18" stroke="#8b5cf6"/>
+         <text x="55" y="21" fill="#8b5cf6" font-size="14" text-anchor="middle">XGBoost</text></g>
+      <g transform="translate(244,0)"><rect rx="14" ry="14" width="200" height="32" fill="#10b981" opacity="0.18" stroke="#10b981"/>
+         <text x="100" y="21" fill="#10b981" font-size="14" text-anchor="middle">Morgan fingerprints (2048b)</text></g>
+    </g>
+  </g>
+
+  <g transform="translate(820,90)" stroke-width="2" fill="none">
+    <g stroke="#ef4444">
+      <circle cx="40" cy="40" r="18"/>
+      <circle cx="40" cy="100" r="18"/>
+      <circle cx="92" cy="70" r="18"/>
+      <line x1="40" y1="58" x2="40" y2="82"/>
+      <line x1="56" y1="48" x2="78" y2="62"/>
+      <line x1="56" y1="92" x2="78" y2="78"/>
+    </g>
+    <g stroke="#10b981" transform="translate(180,40)">
+      <circle cx="40" cy="40" r="18"/>
+      <circle cx="92" cy="20" r="18"/>
+      <circle cx="92" cy="80" r="18"/>
+      <line x1="56" y1="36" x2="78" y2="24"/>
+      <line x1="56" y1="52" x2="78" y2="72"/>
+    </g>
+    <g stroke="#8b5cf6" stroke-dasharray="4 4" opacity="0.85">
+      <path d="M120 80 C 160 80, 180 90, 210 90"/>
+    </g>
+    <text x="100" y="180" fill="#94a3b8" font-size="14" font-family="ui-sans-serif">drug A</text>
+    <text x="220" y="180" fill="#94a3b8" font-size="14" font-family="ui-sans-serif">drug B</text>
+    <text x="120" y="208" fill="#cbd5e1" font-size="14" font-family="ui-sans-serif">interacts?</text>
+  </g>
+</svg>
