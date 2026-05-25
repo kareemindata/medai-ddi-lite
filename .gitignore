@@ -1,0 +1,66 @@
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# Virtual envs
+.venv/
+venv/
+env/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.ruff_cache/
+
+# Data + model artifacts (keep folder shape via .gitkeep)
+data/raw/
+data/interim/
+data/processed/
+data/external/
+*.csv
+*.tsv
+*.parquet
+*.npz
+*.npy
+*.pt
+*.pth
+*.onnx
+*.h5
+*.ckpt
+*.joblib
+*.pkl
+
+# Logs + runs
+runs/
+logs/
+mlruns/
+wandb/
+*.log
+
+# Env vars
+.env
+.env.*
+!.env.example
