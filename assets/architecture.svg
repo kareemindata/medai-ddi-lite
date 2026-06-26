@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 420" width="1120" height="420" role="img" aria-label="medai-ddi-lite architecture">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect width="1120" height="420" fill="#ffffff"/>
+  <text x="40" y="44" font-family="ui-sans-serif, system-ui, sans-serif" font-size="20" font-weight="700" fill="#0f172a">Pipeline</text>
+  <text x="40" y="68" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" fill="#64748b">SMILES pair → Morgan FP × 2 → symmetric pair feature → XGBoost → interaction probability</text>
+
+  <g font-family="ui-sans-serif, system-ui, sans-serif">
+    <g transform="translate(40,120)">
+      <rect width="180" height="120" rx="14" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+      <text x="14" y="28" font-size="12" fill="#ef4444" font-weight="700">01 · INPUT</text>
+      <text x="14" y="60" font-size="16" fill="#0f172a" font-weight="600">SMILES pair</text>
+      <text x="14" y="84" font-size="12" fill="#475569">drug_a, drug_b</text>
+      <text x="14" y="102" font-size="12" fill="#475569">interacts: 0/1</text>
+    </g>
+
+    <g transform="translate(260,120)">
+      <rect width="200" height="120" rx="14" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+      <text x="14" y="28" font-size="12" fill="#f59e0b" font-weight="700">02 · FINGERPRINT</text>
+      <text x="14" y="60" font-size="16" fill="#0f172a" font-weight="600">Morgan (r=2, 2048b)</text>
+      <text x="14" y="84" font-size="12" fill="#475569">RDKit</text>
+      <text x="14" y="102" font-size="12" fill="#475569">cached per SMILES</text>
+    </g>
+
+    <g transform="translate(500,120)">
+      <rect width="200" height="120" rx="14" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
+      <text x="14" y="28" font-size="12" fill="#8b5cf6" font-weight="700">03 · PAIR FEATURE</text>
+      <text x="14" y="60" font-size="16" fill="#0f172a" font-weight="600">sorted concat + XOR</text>
+      <text x="14" y="84" font-size="12" fill="#475569">order-invariant</text>
+      <text x="14" y="102" font-size="12" fill="#475569">3 × 2048 dims</text>
+    </g>
+
+    <g transform="translate(740,120)">
+      <rect width="200" height="120" rx="14" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+      <text x="14" y="28" font-size="12" fill="#3b82f6" font-weight="700">04 · CLASSIFY</text>
+      <text x="14" y="60" font-size="16" fill="#0f172a" font-weight="600">XGBoost</text>
+      <text x="14" y="84" font-size="12" fill="#475569">stratified 5-fold CV</text>
+      <text x="14" y="102" font-size="12" fill="#475569">400 trees, depth 6</text>
+    </g>
+
+    <g transform="translate(220,280)">
+      <rect width="680" height="100" rx="14" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+      <text x="20" y="32" font-size="12" fill="#10b981" font-weight="700">05 · OUTPUT</text>
+      <text x="20" y="62" font-size="16" fill="#0f172a" font-weight="600">P(interacts) · ROC-AUC · PR-AUC · F1 · confusion matrix</text>
+      <text x="20" y="86" font-size="12" fill="#475569">Honest baseline for ddi-risk-explorer — laptop-runnable in minutes, no GPU required.</text>
+    </g>
+
+    <g stroke="#475569" stroke-width="1.6" fill="none" marker-end="url(#arrow)">
+      <line x1="220" y1="180" x2="260" y2="180"/>
+      <line x1="460" y1="180" x2="500" y2="180"/>
+      <line x1="700" y1="180" x2="740" y2="180"/>
+      <path d="M840 240 C 840 268, 600 268, 560 280"/>
+    </g>
+  </g>
+</svg>
